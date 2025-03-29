@@ -1,0 +1,230 @@
+/* Mobile-First Base Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.currency-converter {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  transition: all 0.3s ease;
+}
+
+.title {
+  color: #3a7bd5;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  color: #666;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* Input Styles (Mobile) */
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e1e5ee;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+/* Select Styles (Mobile) */
+.select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.select-container {
+  width: 100%;
+}
+
+.select-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.select-container select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e1e5ee;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+.swap-icon {
+  font-size: 1.5rem;
+  color: #3a7bd5;
+  cursor: pointer;
+  text-align: center;
+  padding: 0.5rem 0;
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+  align-self: center;
+}
+
+.swap-icon:hover {
+  transform: rotate(270deg);
+}
+
+/* Result Styles */
+.result-container {
+  background-color: #f8fafc;
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.conversion-text {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.conversion-result {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #3a7bd5;
+  margin: 0.5rem 0;
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 1rem;
+}
+
+/* Loader Animation */
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3a7bd5;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tablet Breakpoint (600px and up) */
+@media (min-width: 600px) {
+  .currency-converter {
+    padding: 2rem;
+    max-width: 500px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .select-group {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .swap-icon {
+    transform: rotate(0deg);
+    padding-bottom: 1.5rem;
+  }
+
+  .swap-icon:hover {
+    transform: rotate(180deg);
+  }
+
+  .conversion-result {
+    font-size: 2rem;
+  }
+
+  .loader {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Desktop Enhancements (900px and up) */
+@media (min-width: 900px) {
+  .currency-converter {
+    padding: 2.5rem;
+  }
+
+  .input-group input:hover,
+  .select-container select:hover {
+    border-color: #3a7bd5;
+  }
+}
+
+/* Large Mobile Landscape Optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+  .currency-converter {
+    padding: 1rem;
+    max-width: 90%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .subtitle {
+    margin-bottom: 1rem;
+  }
+
+  .select-group {
+    flex-direction: row;
+    margin-bottom: 1rem;
+  }
+
+  .swap-icon {
+    transform: rotate(0deg);
+    padding-bottom: 1rem;
+  }
+}
