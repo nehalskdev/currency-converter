@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import viteLogo from "/vite.svg";
 import "./index.css";
 
 export default function App() {
