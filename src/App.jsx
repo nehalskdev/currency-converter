@@ -8,6 +8,11 @@ export default function App() {
   const [result, setResult] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  function handleSwap() {
+    setFromCurr(setToCurr);
+    setToCurr(setFromCurr);
+  }
+
   useEffect(() => {
     async function convert() {
       try {
@@ -64,7 +69,9 @@ export default function App() {
             </select>
           </div>
 
-          <div className="swap-icon">⇄</div>
+          <div className="swap-icon" onClick={handleSwap}>
+            ⇄
+          </div>
 
           <div className="select-container">
             <label htmlFor="to-currency">To</label>
