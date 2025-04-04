@@ -105,6 +105,16 @@ body {
   transform: rotate(270deg);
 }
 
+.error-message {
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.input-group input:invalid {
+  border-color: #e74c3c;
+}
+
 /* Result Styles */
 .result-container {
   background-color: #f8fafc;
