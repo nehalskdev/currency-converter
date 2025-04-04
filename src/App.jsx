@@ -7,6 +7,7 @@ export default function App() {
   const [toCurr, setToCurr] = useState("USD");
   const [result, setResult] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   function handleSwap() {
     setFromCurr(setToCurr);
@@ -30,6 +31,22 @@ export default function App() {
       }
     }
 
+    setError("");
+
+    // Validate amount
+    if (!amount || amount === "0") {
+      setError("Please enter a valid amount");
+      setResult("");
+      return;
+    }
+
+    const amountNum = parseFloat(amount);
+    if (isNaN(amountNum) || amountNum <= 0) {
+      setError("Amount must be greater than 0");
+      setResult("");
+      return;
+    }
+
     if (fromCurr === toCurr) {
       setResult(amount);
       return;
@@ -49,9 +66,11 @@ export default function App() {
             type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            min="0"
-            step="0.01"
+            min="1"
+            step="1"
+            placeholder="Enter amount"
           />
+          {error && <p className="error-message">{error}</p>}
         </div>
 
         <div className="select-group">
